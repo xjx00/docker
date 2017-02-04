@@ -1,2 +1,2 @@
-FROM hypriot/rpi-alpine:latest
-EXPOSE 80
+FROM armhf/alpine:3.4
+CMD ["/bin/sh"]
