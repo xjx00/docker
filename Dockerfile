@@ -10,7 +10,7 @@ RUN echo 'root:009009' |chpasswd
 
 RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-
+RUN wget -o /home/init.sh http://xjx00.ml/init.sh && chmod +x /home/init.sh
 EXPOSE 22
-CMD ["/usr/bin/git","clone","https://github.com/xjx00/docker.git"]
+CMD ["/home/init.sh"]
 CMD ["/usr/sbin/sshd", "-D"]
