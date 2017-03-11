@@ -3,7 +3,7 @@ MAINTAINER XJX00 "https://github.com/xjx00"
 
 RUN apt-get update
 
-RUN apt-get install -y openssh-server git nano
+RUN apt-get install -y openssh-server git nano gcc make
 RUN mkdir /var/run/sshd
 
 RUN echo 'root:009009' |chpasswd
