@@ -2,8 +2,12 @@ FROM ubuntu:16.04
 MAINTAINER XJX00 "https://github.com/xjx00"
 
 RUN apt-get update
+RUN apt-get install -y git build-essential binutils
+WORKDIR /root
+RUN git clone https://github.com/igorpecovnik/lib/
+RUN cp lib/compile.sh .
 
-RUN apt-get install -y openssh-server git nano
+RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 
 RUN echo 'root:009009' |chpasswd
